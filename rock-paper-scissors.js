@@ -60,3 +60,13 @@ const getUserChoice = userInput => {
   };
   
   playGame();
+/*
+  const monday = getSleepHours('Monday');
+  const tuesday = getSleepHours('Tuesday');
+  const wednesday = getSleepHours('Wednesday');
+  const thursday = getSleepHours('Thursday');
+  const friday = getSleepHours('Friday');
+  const saturday = getSleepHours('Saturday');
+  const sunday = getSleepHours('Sunday');
+  const totalSleepHours = monday+tuesday+wednesday+thursday+friday+saturday+sunday;
+  return totalSleepHours;
