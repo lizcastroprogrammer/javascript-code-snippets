@@ -80,4 +80,74 @@ const convertToBaby = (array) => {
   console.log(reverseArray(sentence));
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-//
+//function to sort an array in descending order
+const sortYears = array => {
+    let newArray = [];
+    let arrayElement = array.sort().reverse();
+    newArray.push(arrayElement);
+    return newArray;
+  }
+  
+  const years = [1970, 1999, 1951, 1982, 1963, 2011, 2018, 1922]
+  // Should print [ 2018, 2011, 1999, 1982, 1970, 1963, 1951, 1922 ]
+  console.log(sortYears(years));
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//function to take two arrays and create a new array with the elements that are the same
+const justCoolStuff = (array1, array2) => {
+    let newArray = [];
+    array1.filter(element => {
+      if(array2.includes(element)) {
+        newArray.push(element);
+      }
+    });
+    return newArray;
+  };
+  
+  const coolStuff = ['gameboys', 'skateboards', 'backwards hats', 'fruit-by-the-foot', 'pogs', 'my room', 'temporary tattoos'];
+  
+  const myStuff = [ 'rules', 'fruit-by-the-foot', 'wedgies', 'sweaters', 'skateboards', 'family-night', 'my room', 'braces', 'the information superhighway']; 
+// Should print [ 'fruit-by-the-foot', 'skateboards', 'my room' ] 
+  console.log(justCoolStuff(myStuff, coolStuff))
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//function to iterate over an array of objects and determine if property meets a condition
+const isTheDinnerVegan = array => {
+    for ( let i = 0; i < array.length; i++) {
+      if (array[i].source !== 'plant') {
+        return false;
+      } else {
+        return true;
+      }
+    }
+    };
+  
+  const dinner = [{name: 'hamburger', source: 'meat'}, {name: 'cheese', source: 'dairy'}, {name: 'ketchup', source:'plant'}, {name: 'bun', source: 'plant'}, {name: 'dessert twinkies', source:'unknown'}];
+  // Should print false  
+  console.log(isTheDinnerVegan(dinner))
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//function to sort an array of objects based on one of their property's values
+const speciesArray = [ {speciesName:'shark', numTeeth:50}, {speciesName:'dog', numTeeth:42}, {speciesName:'alligator', numTeeth:80}, {speciesName:'human', numTeeth:32}];
+
+
+const sortSpeciesByTeeth = array => {
+  const newArray = array.sort(function (a, b) {
+  return a.numTeeth - b.numTeeth;
+  });
+  return newArray;
+};
+
+console.log(sortSpeciesByTeeth(speciesArray))
+
+// Should print:
+// [ { speciesName: 'human', numTeeth: 32 },
+//   { speciesName: 'dog', numTeeth: 42 },
+//   { speciesName: 'shark', numTeeth: 50 },
+//   { speciesName: 'alligator', numTeeth: 80 } ]
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
