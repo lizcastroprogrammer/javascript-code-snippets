@@ -1,77 +1,27 @@
 Tables exercise
 
 <script>
-    let multiplier = 1;
-    let array1 = [];
-    let array2 = [];
-    let array3 = [];
-    let array4 = [];
-    let array5 = [];
-    let array6 = [];
-    let array7 = [];
-    let array8 = [];
-    let array9 = [];
-    let array10 = [];
+    function createMultiplicationTable() {
+        var consoleString = [];
+        let returnString = "";
+        
+    for (let i = 1; i <= 10; i++) {
+        for (let j = 1; j <= 10; j++) {
+        returnString = returnString + " " + (i * j);
 
-    for (i = 1; i <= 100; i++) {
-        if(i <= 10) {
-            array1.push(i * multiplier);
-        }
-        if(i > 10 && i <= 20) {
-            let j = i - 10;
-            multiplier = 2;
-            array2.push(j * multiplier);
-        }
-        if(i > 20 && i <= 30) {
-            let j = i - 20;
-            multiplier = 3;
-            array3.push(j * multiplier);
-        }
-        if(i > 30 && i <= 40) {
-            let j = i - 30;
-            multiplier = 4;
-            array4.push(j * multiplier);
-        }
-        if(i > 40 && i <= 50) {
-            let j = i - 40;
-            multiplier = 5;
-            array5.push(j * multiplier);
-        }
-        if(i > 50 && i <= 60) {
-            let j = i - 50;
-            multiplier = 6;
-            array6.push(j * multiplier);
-        }
-        if(i > 60 && i <= 70) {
-            let j = i - 60;
-            multiplier = 7;
-            array7.push(j * multiplier);
-        }
-        if(i > 70 && i <= 80) {
-            let j = i - 70;
-            multiplier = 8;
-            array8.push(j * multiplier);
-        }
-        if(i > 80 && i <= 90) {
-            let j = i - 80;
-            multiplier = 9;
-            array9.push(j * multiplier);
-        }
-        if(i > 90 && i <= 100) {
-            let j = i - 90;
-            multiplier = 10;
-            array10.push(j * multiplier);
+        if (j === 10) {
+            returnString = returnString.slice(1);
+            consoleString.push(returnString);
+            returnString = "";
         }
     }
+}
+    //console.log(consoleString);
 
-    console.log(array1.join('-'));
-    console.log(array2.join('-'));
-    console.log(array3.join('-'));
-    console.log(array4.join('-'));
-    console.log(array5.join('-'));
-    console.log(array6.join('-'));
-    console.log(array7.join('-'));
-    console.log(array8.join('-'));
-    console.log(array9.join('-'));
-    console.log(array10.join('-'));
+    for(let i = 0; i < consoleString.length; i++) {
+        console.log(consoleString[i]);
+    }
+}
+createMultiplicationTable();
 </script>
+
