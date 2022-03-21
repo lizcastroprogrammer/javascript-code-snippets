@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Grid</title>
+    <style>
+        .on{
+            background: orange;
+        }
+        .content{
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr 1fr 1fr;
+            gap: 5px;
+        }
+        div{
+            padding: 50px;
+            text-align: center;
+            border-style: solid;
+            font-size: 2em;
+        }
+    </style>
+</head>
+<body>
+    <button onclick="move()">MOVE</button>
+    <main class="content">
+        <div id="s1">1</div>
+        <div id="s2">2</div>
+        <div id="s3">3</div>
+        <div id="s4">4</div>
+        <div id="s5">5</div>
+        <div id="s6">6</div>
+        <div id="s7">7</div>
+        <div id="s8">8</div>
+        <div id="s9">9</div>
+        <div id="s10">10</div>
+        <div id="s11">11</div>
+        <div id="s12">12</div>  
+    </main>
+    <script>
+        function move() {
+            let i = 1;
+            let styleOn = false;
+
+            let timer = setInterval(() => { 
+                on();
+                if (i === 13) { 
+                window.clearInterval(timer);  
+            }
+            }, 500);
+
+            function on() {
+                if(styleOn === false) {
+                    const element = document.getElementById('s' + i);
+                    element.classList.add('on');
+                    styleOn = true;
+                    console.log('on');
+                } else if(styleOn === true) {
+                    const element = document.getElementById('s' + i);
+                    element.classList.remove('on');
+                    i += 1;
+                    styleOn = false;
+                    console.log('off');
+                } 
+            }
+        }
+    </script>
+</body>
+</html>
